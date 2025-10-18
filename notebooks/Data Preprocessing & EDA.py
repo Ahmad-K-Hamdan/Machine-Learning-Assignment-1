@@ -61,11 +61,3 @@ for group in medianPerGroup.index:
 print("Number of null values in each column after solving missing values: \n")
 print(data.isnull().sum())
 print("\n")
-
-
-bins = [0, 3, 6, 10]  # end with max+1
-labels = ['0-2', '3-5', '6-9']
-
-data['TenureGroup'] = pd.cut(data['Tenure'], bins=bins, labels=labels, right=False)
-table = pd.crosstab(data['TenureGroup'], data['ChurnStatus'])
-print(table)
